@@ -1,0 +1,12 @@
+/* pages/details/details.wxss */
+.btn_three_{
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+  height: 60px;
+}
+.it-btn{
+  height: 50px;
+  padding: auto;
+  width:33%;
+}

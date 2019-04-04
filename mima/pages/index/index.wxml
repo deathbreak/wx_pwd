@@ -1,0 +1,78 @@
+<!--index.wxml-->
+
+<view class="search-view">
+  <view class="search-content">
+    <image src="/images/search-pic.png" class="search-icon" />
+    <input placeholder="请输入搜索内容" class="search-input" maxlength="30" confirm-type="搜索" bindinput='listenerSearchInput' bindconfirm='toSearch'>
+    </input>
+    <button class='search-btn' bindtap="toSearch">搜索
+    </button>
+  </view>
+</view>
+
+<view class='text_c'>
+</view>
+<!-- <view>
+      <button bindtap="toupdate">修改</button>
+  </view>
+  -->
+<view class="page">
+  <view class="page__bd page__bd_spacing">
+    <view class="kind-list">
+      <block wx:for="{{list}}" wx:key="id">
+        <view class="kind-list__item">
+          <view id="{{item.id}}" class="weui-flex kind-list__item-hd {{item.open ? 'kind-list__item-hd_show' : ''}}" bindtap="kindToggle">
+            <view class="weui-flex__item">{{item.name}}
+            <view class="weui-badge" style="margin-left: 5px;margin-bottom: 15px;">{{item.length_page}}</view>
+            </view>
+            <image class="kind-list__img" src="../../images/icon_nav_{{item.id}}.png"></image>
+          </view>
+          <view class="kind-list__item-bd {{item.open ? 'kind-list__item-bd_show' : ''}}">
+            <view class="weui-cells {{item.open ? 'weui-cells_show' : ''}}">
+              <block wx:for="{{item.pages}}" wx:for-item="page" wx:key="index">
+                <navigator url="../details/details?searchword={{page.searchword}}&category_pwd={{page.category_pwd}}&username={{page.username}}&password={{page.password}}&remarks={{page.remarks}}" class="weui-cell weui-cell_access">
+                  <view class="weui-cell__bd">{{page.searchword}}</view>
+                  <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                </navigator>
+              </block>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>
+
+<view class="page__ft">
+        <image src="../../images/cat_icon.png" style="width: 30px; height: 30px;"></image>
+        <view class="foot-text">内容未刷新?下拉试试</view>
+</view>
+
+<!--index.wxml
+<!--1px = 750/320 = 2.34rpx;
+<view class="container">
+   
+   
+   <view class="search-view" style="background:{{ scrollTop === 0 ?'-webkit-linear-gradient(top, rgba(105,195,170, 1), rgba(105,195,170, 0.3))' :( scrollTop<200 ? 'rgba(105,195,170,'+(scrollTop/400+0.3) +')' : 'rgba(105,195,170,1)')  }} ">
+    <view class="search-content">
+      <image src="/images/search-pic.png" class="search-icon" />
+      <input placeholder="请输入搜索内容" class="search-input" maxlength="30" confirm-type="搜索" bindinput='listenerSearchInput' bindconfirm='toSearch'>
+      </input>
+      <button class='search-btn' bindtap="toSearch">搜索
+      </button>
+    </view>
+  </view>
+   
+  <view>
+      <text>{{userInfo}}</text>
+  </view>
+  <view>
+      <button bindtap="toadd">添加新密码信息</button>
+  </view>
+  <view>
+      <button bindtap="toupdate">修改</button>
+  </view>
+    
+    
+</view>
+-->

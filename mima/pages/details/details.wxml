@@ -1,0 +1,53 @@
+<view class="weui-panel weui-panel_access">
+  <view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">错误提示:有空白信息或字数限制</view>
+  <view class="weui-panel__hd">详细信息</view>
+  <view class="weui-panel__bd">
+    <view class="weui-media-box weui-media-box_text">
+      <view class="weui-media-box__title weui-media-box__title_in-text">关键词</view>
+      <view class="weui-media-box__desc">{{searchword}}</view>
+    </view>
+    <view class="weui-media-box weui-media-box_text">
+      <view class="weui-media-box__title weui-media-box__title_in-text">账号</view>
+      <view class="weui-media-box__desc">{{username}}</view>
+    </view>
+    <view class="weui-media-box weui-media-box_text">
+      <view class="weui-media-box__title weui-media-box__title_in-text">密码</view>
+      <view class="weui-media-box__desc">{{password}}</view>
+    </view>
+    <view class="weui-media-box weui-media-box_text">
+      <view class="weui-media-box__title weui-media-box__title_in-text">分类</view>
+      <view class="weui-media-box__desc">{{category_pwd}}</view>
+    </view>
+    <view class="weui-media-box weui-media-box_text">
+      <view class="weui-media-box__title weui-media-box__title_in-text">备注</view>
+      <view class="weui-media-box__desc">{{remarks}}</view>
+    </view>
+  </view>
+</view>
+<view class="btn_three_">
+  <button class="it-btn" type="default" bindtap="todelete">删除</button>
+  <button class="it-btn" type="default" bindtap="toupdate">修改</button>
+  <button class="it-btn" type="default" bindtap="toshare">分享</button>
+</view>
+<view hidden="{{f}}">
+    <view class="weui-cells__title">密令(其他用户会通过此信息获取您分享的密码)</view>
+    <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__bd">
+              <input class="weui-input" bindinput='listenerSearchInput_s' placeholder="请输入密令" value="{{s}}"/><view class="weui-textarea-counter" style="color:{{n1>30?'#f00':'#a8a8a8'}};">{{n1}}/30</view>
+          </view>
+        </view>
+    </view>
+
+    <view class="weui-cells__title">备注(您想对他/她/它说的话)</view>
+    <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__bd">
+              <input class="weui-input" bindinput='listenerSearchInput_b' placeholder="请输入备注信息" value="{{b}}"/><view class="weui-textarea-counter" style="color:{{n2>30?'#f00':'#a8a8a8'}};">{{n2}}/30</view>
+          </view>
+        </view>
+    </view>
+    <view class="weui-btn-area">
+            <button class="weui-btn" type="primary" bindtap="sharepwd">确定</button>
+    </view>
+</view>

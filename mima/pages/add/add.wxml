@@ -1,0 +1,60 @@
+<view class="page__bd">
+    <view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">错误提示:有空白信息或字数限制</view>
+    <view class="weui-cells__title">账号</view>
+    <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__bd">
+              <input class="weui-input" bindinput='listenerSearchInput_user' placeholder="请输入账号" /><view class="weui-textarea-counter" style="color:{{n1>30?'#f00':'#a8a8a8'}};">{{n1}}/30</view>
+          </view>
+        </view>
+    </view>
+
+    <view class="weui-cells__title">密码</view>
+    <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__bd">
+              <input class="weui-input" bindinput='listenerSearchInput_pwd' placeholder="请输入密码" /><view class="weui-textarea-counter" style="color:{{n2>30?'#f00':'#a8a8a8'}};">{{n2}}/30</view>
+          </view>
+        </view>
+    </view>
+
+    <view class="weui-cells__title">关键词(通过该关键词搜索这条密码信息)</view>
+    <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                    <textarea class="weui-textarea" bindinput='listenerSearchInput_tips' placeholder="请输入关键词" style="height: 3.3em" />
+                    <view class="weui-textarea-counter" style="color:{{n3>40?'#f00':'#a8a8a8'}};">{{n3}}/40</view>
+                </view>
+            </view>
+    </view>
+<!---->
+    <view class="weui-cells__title">密码分类</view>
+        <view class="weui-cells weui-cells_after-title">
+            <radio-group bindchange="radioChange">
+                <label class="weui-cell weui-check__label" wx:for="{{radioItems}}" wx:key="value">
+                    <radio class="weui-check" value="{{item.value}}" checked="{{item.checked}}"/>
+
+                    <view class="weui-cell__bd">{{item.name}}</view>
+                    <view class="weui-cell__ft weui-cell__ft_in-radio" wx:if="{{item.checked}}">
+                        <icon class="weui-icon-radio" type="success_no_circle" size="16"></icon>
+                    </view>
+                </label>
+            </radio-group>     
+        </view>
+<!---->
+    <view class="weui-cells__title">备注信息(可不填)</view>
+    <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                    <textarea class="weui-textarea" bindinput='listenerSearchInput_remarks' placeholder="请输入备注信息" style="height: 3.3em" />
+                    <view class="weui-textarea-counter" style="color:{{n4>80?'#f00':'#a8a8a8'}};">{{n4}}/80</view>
+                </view>
+            </view>
+    </view>
+    
+    <view class="weui-btn-area">
+            <button class="weui-btn" type="primary" bindtap="showTopTips">确定</button>
+    </view>
+
+</view>
+

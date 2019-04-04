@@ -1,0 +1,45 @@
+<view class="weui-cells__title">分享密令</view>
+<view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">错误提示:有空白信息或字数限制</view>
+<view class="weui-cells weui-cells_after-title">
+  <view class="weui-cell">
+    <view class="weui-cell__bd">
+      <textarea class="weui-textarea" bindinput='listenerSearchInput' placeholder="请输入分享密令" style="height: 3.3em" />
+      <view class="weui-textarea-counter" style="color:{{n>30?'#f00':'#a8a8a8'}};">{{n}}/30</view>
+    </view>
+  </view>
+</view>
+<view class="weui-btn-area">
+            <button class="weui-btn" type="default" bindtap="showTopTips">获取相关信息</button>
+</view>
+
+<view hidden="{{f}}"> 
+<view class="weui-panel__bd">
+    <view class="weui-media-box weui-media-box_text">
+      <view class="weui-media-box__title weui-media-box__title_in-text">账号</view>
+      <view class="weui-media-box__desc">{{username}}</view>
+    </view>
+    <view class="weui-media-box weui-media-box_text">
+      <view class="weui-media-box__title weui-media-box__title_in-text">密码</view>
+      <view class="weui-media-box__desc">{{password}}</view>
+    </view>
+    <view class="weui-media-box weui-media-box_text">
+      <view class="weui-media-box__title weui-media-box__title_in-text">分享人留下的信息</view>
+      <view class="weui-media-box__desc">{{beizhu}}</view>
+    </view>
+</view>
+</view>  
+
+<view class="weui-panel">
+  <view class="weui-panel__hd">您分享的密码信息</view>
+  <view class="weui-panel__bd">
+    <view class="weui-media-box weui-media-box_text">
+      <view class="weui-media-box__title weui-media-box__title_in-text">密令</view>
+      <view class="weui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</view>
+      <view class="weui-media-box__info">
+        <view class="weui-media-box__info__meta">已有0人查看此分享</view>
+        <view class="weui-media-box__info__meta">时间</view>
+        <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">其它信息</view>
+      </view>
+    </view>
+  </view>
+</view>

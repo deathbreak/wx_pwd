@@ -1,0 +1,4 @@
+/* pages/add/add.wxss */
+.page__bd{
+  background-color: #F2f2f2;
+}
