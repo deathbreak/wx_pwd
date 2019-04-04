@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.logindaoImpl">
+	<select id="SelectAll_login" resultType="dao.login">
+		select * from login
+	</select>
+	<insert id="Addlogin" parameterType="dao.login">
+		insert into login(usertimeid,id,begintime)values(#{usertimeid},#{id},#{begintime})
+	</insert>
+	<delete id="Deletelogin">   
+		delete from login where id=#{id}
+	</delete>
+	<select id="Select_info" resultType="dao.login">
+		select * from login where usertimeid = #{usertimeid}
+	</select>	
+	<select id="Queryonlineuser"  resultType="java.lang.Integer">
+		select count(*) from login
+    </select>
+</mapper>

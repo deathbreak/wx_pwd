@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.sharelookdaoImpl">
+	<insert id="Addsharelook" parameterType="dao.sharelook">
+		insert into sharelook(`key`,openid)values(#{key},#{openid})
+	</insert>
+	<delete id="Deletesharelook">   
+		delete from sharelook where `key`=#{key}
+	</delete>
+	<select id="Querylookuser"  resultType="java.lang.Integer">
+		select count(*) from sharelook where `key`=#{key}
+    </select>
+    <select id="Select_sharelook" resultType="dao.sharelook">
+		select * from `sharelook` where `key` =#{key} and openid=#{openid}
+	</select>
+</mapper>

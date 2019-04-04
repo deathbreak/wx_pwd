@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.pwdinfodaoImpl">
+	<select id="select_repeat_pwd" resultType="dao.pwdinfo">
+		select * from pwdinfo where id = #{id} and searchword=#{searchword} and username=#{username}
+	</select>
+	<select id="select_repeat_all_pwd" resultType="dao.pwdinfo">
+		select * from pwdinfo where id = #{id} and searchword=#{searchword} and category_pwd=#{category_pwd} and username=#{username} and password=#{password} and remarks=#{remarks}
+	</select>
+	<select id="select_all_index" resultType="action.pwdjsonbean">
+		select searchword,category_pwd,username,password,remarks from pwdinfo where id = #{id} and category_pwd=#{category_pwd}
+	</select>
+	<insert id="addpwdinfo" parameterType="dao.pwdinfo">
+		insert into pwdinfo(id,searchword,category_pwd,username,password,remarks)values(#{id},#{searchword},#{category_pwd},#{username},#{password},#{remarks})
+	</insert>
+	<delete id="delete_pwd">   
+		delete from pwdinfo where id=#{id} and searchword=#{searchword} and username=#{username}
+	</delete>
+	<update id="update_info" parameterType="dao.updatebean">
+		update pwdinfo set searchword=#{searchword},category_pwd=#{category_pwd},username=#{username},password=#{password},remarks=#{remarks} where id=#{id} and searchword=#{check_searchword} and username=#{check_username} 
+	</update>
+</mapper>
